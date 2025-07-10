@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テストWebアプリ</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
     <h1>index.html表示してます</h1>
     <P>{{ my_dict.insert_something1 }}</P>
     <P>{{ my_dict.insert_something2 }}</P>
@@ -14,8 +9,14 @@
     <h2> titles </h2>
     <ul>
         {% for title in my_dict.test_titles %}
-           <li>{{ title }} </li>
+            {% if title == 'title2' %}
+                <li>{{ title }} </li>
+            {% elif title == 'title3' %}
+                <li>Can't see</li>
+            {% else %}
+                <li>xxxx</li>
+            {% endif %}
         {% endfor %}
     </ul>
-</body>
-</html>
+</div>
+{% endblock %}
