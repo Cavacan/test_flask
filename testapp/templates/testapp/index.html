@@ -3,7 +3,8 @@
 {% block content %}
 <div class="container">
     <h1>index.html表示してます</h1>
-    <P>{{ my_dict.insert_something1 }}</P>
+    <img src="{{ url_for('static', filename='images/Flask_logo.svg') }}">
+    <P id="test">{{ my_dict.insert_something1 }}</P>
     <P>{{ my_dict.insert_something2 }}</P>
     
     <h2> titles </h2>
@@ -19,4 +20,5 @@
         {% endfor %}
     </ul>
 </div>
+<script src="{{ url_for('static', filename='javascript/sample.js')}}"></script>
 {% endblock %}
